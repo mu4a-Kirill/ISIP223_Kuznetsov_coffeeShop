@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace ISIP223_Kuznetsov_coffeeShop
 {
@@ -23,9 +24,16 @@ namespace ISIP223_Kuznetsov_coffeeShop
         {
             InitializeComponent();
         }
-
+        public static string GetHash(string password)
+        {
+            using (var hash = SHA1.Create())
+            {
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(password)).Select(x => x.ToString("X2")));
+            }
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            MainFrame.Navigate(new AuthPage());
             if (Properties.Settings.Default.IsDarkTheme)
             {
                 ChangeTheme("DarkTheme.xaml");
@@ -64,8 +72,7 @@ namespace ISIP223_Kuznetsov_coffeeShop
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из приложения?","Подтверждение выхода", MessageBoxButton.YesNo,MessageBoxImage.Question);
-
+         var result = MessageBox.Show("Вы действительно хотите выйти из приложения?","Подтверждение выхода", MessageBoxButton.YesNo,MessageBoxImage.Question);
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;

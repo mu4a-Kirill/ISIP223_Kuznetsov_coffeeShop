@@ -1,0 +1,34 @@
+﻿<Page x:Class="ISIP223_Kuznetsov_coffeeShop.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISIP223_Kuznetsov_coffeeShop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Авторизация">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Margin="0,20">
+
+            <TextBlock Text="Авторизация" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Логин"/>
+            <TextBox x:Name="TextBoxLogin" ToolTip="Введите логин"/>
+
+            <TextBlock Text="Пароль" Margin="0,10,0,0"/>
+            <PasswordBox x:Name="PasswordBox" ToolTip="Введите пароль"/>
+
+            <Button x:Name="ButtonEnter" Content="Войти" Click="ButtonEnter_Click" Margin="0,20,0,10" Width="200" HorizontalAlignment="Center"/>
+            <Button x:Name="ButtonReg" Content="Регистрация" Click="ButtonReg_Click" Margin="0,0,0,10" Width="200" HorizontalAlignment="Center"/>
+            <Button x:Name="ButtonChangePassword" Content="Сменить пароль" Click="ButtonChangePassword_Click" Width="200" HorizontalAlignment="Center"/>
+
+            <Label x:Name="labelCaptcha" Content="Введите код с картинки:" Visibility="Collapsed" Margin="0,15,0,5"/>
+            <TextBox x:Name="captcha" IsReadOnly="True" FontWeight="Bold" FontStyle="Italic" FontSize="18" TextAlignment="Center" Visibility="Collapsed" Background="#eee" Foreground="Black"/>
+            <TextBox x:Name="captchaInput" Visibility="Collapsed" Margin="0,5,0,10" ToolTip="Введите символы выше"/>
+            <Button x:Name="submitCaptcha" Content="Подтвердить" Click="submitCaptcha_Click" Visibility="Collapsed" Width="200" HorizontalAlignment="Center"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>
