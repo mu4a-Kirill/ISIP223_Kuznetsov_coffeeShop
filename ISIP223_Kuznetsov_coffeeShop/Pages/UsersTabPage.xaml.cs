@@ -39,14 +39,12 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем пользователя из строки, где нажали кнопку
             var user = (sender as Button).DataContext as Users;
             NavigationService.Navigate(new AddEditUserPage(user));
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            // Получаем всех выделенных пользователей
             var usersToDelete = DataGridUsers.SelectedItems.Cast<Users>().ToList();
             if (usersToDelete.Count == 0) return;
 
@@ -54,7 +52,6 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
             {
                 using (var db = new DB_Kuznetsov_coffeeShopEntities())
                 {
-                    // Привязываем объекты к текущему контексту для удаления
                     foreach (var u in usersToDelete)
                     {
                         var userInDb = db.Users.Find(u.User_Id);

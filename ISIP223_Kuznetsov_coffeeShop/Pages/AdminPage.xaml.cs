@@ -25,20 +25,8 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
 
         private void BtnUsers_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new UsersTabPage());
         private void BtnProducts_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new ProductsTabPage());
-
-        private void BtnOrders_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("потом");
-        }
-
-        private void BtnCafes_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("потом");
-        }
-
-        private void BtnCharts_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new DiagrammPage());
-        }
+        private void BtnOrders_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new OrdersTabPage());
+        private void BtnCafes_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new CafesTabPage());
+        private void BtnCharts_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new DiagrammPage());
     }
 }

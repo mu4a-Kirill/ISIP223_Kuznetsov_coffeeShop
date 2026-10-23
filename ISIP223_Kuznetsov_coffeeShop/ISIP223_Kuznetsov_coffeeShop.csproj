@@ -76,6 +76,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\AddEditCafePage.xaml.cs">
+      <DependentUpon>AddEditCafePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditOrderPage.xaml.cs">
+      <DependentUpon>AddEditOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditProductPage.xaml.cs">
       <DependentUpon>AddEditProductPage.xaml</DependentUpon>
     </Compile>
@@ -99,11 +105,17 @@
     <Compile Include="Orders.cs">
       <DependentUpon>CoffeeShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CafesTabPage.xaml.cs">
+      <DependentUpon>CafesTabPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DiagrammPage.xaml.cs">
       <DependentUpon>DiagrammPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MyOrdersPage.xaml.cs">
       <DependentUpon>MyOrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrdersTabPage.xaml.cs">
+      <DependentUpon>OrdersTabPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductsTabPage.xaml.cs">
       <DependentUpon>ProductsTabPage.xaml</DependentUpon>
@@ -135,6 +147,14 @@
     <Compile Include="User_Roles.cs">
       <DependentUpon>CoffeeShopModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Pages\AddEditCafePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,11 +167,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CafesTabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DiagrammPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MyOrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrdersTabPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
