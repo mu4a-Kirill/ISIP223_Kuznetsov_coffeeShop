@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISIP223_Kuznetsov_coffeeShop.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -77,15 +78,15 @@ namespace ISIP223_Kuznetsov_coffeeShop
                 }
                 else
                 {
-                    MessageBox.Show("Вход выполнен как Пользователь (здесь будет переход на UserPage)");
+                    NavigationService.Navigate(new UserPage(user));
                 }
             }
         }
-        
-          
+
+
         private void ButtonReg_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Переход на страницу регистрации");
+            NavigationService.Navigate(new RegPage());
         }
 
         private void ButtonChangePassword_Click(object sender, RoutedEventArgs e)

@@ -7,6 +7,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Регистрация">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Margin="0,20">
+            <StackPanel>
+                <TextBlock Text="Регистрация" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
+                <Label Content="Логин" Margin="0,5,0,0"/>
+                <Grid>
+                    <TextBox x:Name="TbLogin" ToolTip="Введите логин" TextChanged="TbLogin_TextChanged"/>
+                    <Label x:Name="LblLoginHint" Content="Введите логин" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"/>
+                </Grid>
 
+                <Label Content="Пароль" Margin="0,10,0,0"/>
+                <Grid>
+                    <PasswordBox x:Name="PbPassword" ToolTip="Введите пароль" PasswordChanged="PbPassword_PasswordChanged"/>
+                    <Label x:Name="LblPassHint" Content="Введите пароль" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"/>
+                </Grid>
+
+                <Label Content="Подтвердите пароль" Margin="0,10,0,0"/>
+                <Grid>
+                    <PasswordBox x:Name="PbPasswordConfirm" ToolTip="Повторите пароль" PasswordChanged="PbPasswordConfirm_PasswordChanged"/>
+                    <Label x:Name="LblPassConfirmHint" Content="Повторите пароль" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"/>
+                </Grid>
+
+                <Label Content="ФИО" Margin="0,10,0,0"/>
+                <Grid>
+                    <TextBox x:Name="TbFIO" ToolTip="Введите ваше ФИО" TextChanged="TbFIO_TextChanged"/>
+                    <Label x:Name="LblFioHint" Content="Иванов Иван Иванович" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"/>
+                </Grid>
+
+                <Label Content="Роль" Margin="0,10,0,0"/>
+                <ComboBox x:Name="CmbRole" ToolTip="Выберите роль" Height="30" VerticalContentAlignment="Center" Margin="0,0,0,10">
+                    <ComboBoxItem Content="Пользователь" Tag="2" IsSelected="True"/>
+                    <ComboBoxItem Content="Администратор" Tag="1"/>
+                </ComboBox>
+
+                <Button x:Name="BtnRegister" Content="Зарегистрироваться" Click="BtnRegister_Click" Margin="0,10,0,10" Width="200" HorizontalAlignment="Center"/>
+                <Button x:Name="BtnBackToAuth" Content="Назад" Click="BtnBackToAuth_Click" Width="200" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Page>

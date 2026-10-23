@@ -39,12 +39,23 @@
         <Setter Property="FontFamily" Value="Open Sans"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Background" Value="#1E5255"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="BorderBrush" Value="#0198AF"/>
-        <Setter Property="CaretBrush" Value="#FFFFFF"/>
     </Style>
 
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+
+    
+    
     <Style TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="Open Sans"/>
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>

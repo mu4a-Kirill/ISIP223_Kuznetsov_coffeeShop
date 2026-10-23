@@ -23,7 +23,13 @@ namespace ISIP223_Kuznetsov_coffeeShop
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigated += (s, e) =>
+            {
+                ButtonBack.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Hidden;
+            };
         }
+
+
         public static string GetHash(string password)
         {
             using (var hash = SHA1.Create())
@@ -80,8 +86,12 @@ namespace ISIP223_Kuznetsov_coffeeShop
         }
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
         }
-        
+
 
 
     }

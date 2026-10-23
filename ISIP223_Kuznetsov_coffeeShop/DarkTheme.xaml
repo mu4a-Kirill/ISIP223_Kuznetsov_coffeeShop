@@ -48,6 +48,43 @@
         <Setter Property="BorderBrush" Value="#0198AF"/>
         <Setter Property="CaretBrush" Value="#FFFFFF"/>
     </Style>
+
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Background" Value="#1E5255"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Background" Value="#1E5255"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+
+    <!-- Стили для DataGrid (Темная тема) -->
+    <Style TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="#1E5255"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="RowBackground" Value="#1E5255"/>
+        <Setter Property="AlternatingRowBackground" Value="#256569"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#3A7A7E"/>
+        <Setter Property="VerticalGridLinesBrush" Value="#3A7A7E"/>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridCell}">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+
     <Style TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="Open Sans"/>
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
