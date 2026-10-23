@@ -74,7 +74,7 @@ namespace ISIP223_Kuznetsov_coffeeShop
                 if (user.Role_Id == 1)
                 {
 
-                    MessageBox.Show("Вход выполнен как Администратор (здесь будет переход на AdminPage)");
+                    NavigationService.Navigate(new AdminPage());
                 }
                 else
                 {

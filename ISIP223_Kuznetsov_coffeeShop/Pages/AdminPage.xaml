@@ -1,0 +1,21 @@
+﻿<Page x:Class="ISIP223_Kuznetsov_coffeeShop.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISIP223_Kuznetsov_coffeeShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Панель администратора">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel>
+            <TextBlock Text="Панель управления сетью" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+            <Button x:Name="BtnUsers" Content="Пользователи" Click="BtnUsers_Click" Width="250" Margin="10"/>
+            <Button x:Name="BtnProducts" Content="Товары (Меню)" Click="BtnProducts_Click" Width="250" Margin="10"/>
+            <Button x:Name="BtnOrders" Content="Заказы" Click="BtnOrders_Click" Width="250" Margin="10"/>
+            <Button x:Name="BtnCafes" Content="Кофейни" Click="BtnCafes_Click" Width="250" Margin="10"/>
+            <Button x:Name="BtnCharts" Content="Диаграммы и Отчеты" Click="BtnCharts_Click" Width="250" Margin="20,30,10,10"/>
+        </StackPanel>
+    </Grid>
+</Page>
