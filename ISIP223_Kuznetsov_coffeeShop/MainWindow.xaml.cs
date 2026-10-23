@@ -25,7 +25,10 @@ namespace ISIP223_Kuznetsov_coffeeShop
             InitializeComponent();
             MainFrame.Navigated += (s, e) =>
             {
-                ButtonBack.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Hidden;
+                if (MainFrame.Content is Page currentPage)
+                {
+                    this.Title = "Управление сетью кофеен - " + currentPage.Title;
+                }
             };
         }
 

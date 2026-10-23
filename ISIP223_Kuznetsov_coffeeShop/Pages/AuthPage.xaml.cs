@@ -91,7 +91,7 @@ namespace ISIP223_Kuznetsov_coffeeShop
 
         private void ButtonChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Переход на страницу смены пароля");
+            NavigationService.Navigate(new ChangePassPage());
         }
 
         private void CaptchaChange()
