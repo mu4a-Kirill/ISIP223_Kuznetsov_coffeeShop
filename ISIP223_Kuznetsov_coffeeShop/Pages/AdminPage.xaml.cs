@@ -38,7 +38,7 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
 
         private void BtnCharts_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("потом");
+            NavigationService.Navigate(new DiagrammPage());
         }
     }
 }
