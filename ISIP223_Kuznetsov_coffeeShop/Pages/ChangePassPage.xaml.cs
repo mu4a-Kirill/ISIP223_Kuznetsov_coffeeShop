@@ -76,11 +76,17 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
                     return;
                 }
 
+                if (PbOldPassword.Password == PbNewPassword.Password)
+                {
+                    MessageBox.Show("Новый пароль не должен совпадать со старым! Придумайте другой.", "Ошибка");
+                    return;
+                }
+
                 user.Password = AuthPage.GetHash(PbNewPassword.Password);
                 db.SaveChanges();
 
                 MessageBox.Show("Пароль успешно изменен! Войдите с новым паролем.", "Успех");
-                NavigationService.Navigate(new AuthPage()); 
+                NavigationService.Navigate(new AuthPage());
             }
         }
 

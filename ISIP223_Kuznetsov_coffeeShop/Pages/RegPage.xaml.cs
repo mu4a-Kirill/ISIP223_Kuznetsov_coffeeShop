@@ -107,7 +107,7 @@ namespace ISIP223_Kuznetsov_coffeeShop.Pages
             {
                 using (var db = new DB_Kuznetsov_coffeeShopEntities())
                 {
-                    int selectedRoleId = int.Parse(((ComboBoxItem)CmbRole.SelectedItem).Tag.ToString());
+                    int selectedRoleId = 2;
 
                     var newUser = new Users
                     {

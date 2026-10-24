@@ -10,7 +10,7 @@
         Foreground="{DynamicResource TextColor}"
         Loaded="Window_Loaded"
         Closing="Window_Closing">
-   
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -18,13 +18,15 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Button x:Name="ButtonBack"
-                Content="Назад"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Width="80"
-                Height="30"
-                Margin="10,0,0,0"
-                Click="ButtonBack_Click"/>
+            Visibility="Hidden"
+            Grid.Row="0" 
+            Content="Назад"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Width="80"
+            Height="30"
+            Margin="10,0,0,0"
+            Click="ButtonBack_Click"/>
         <Frame x:Name="MainFrame"
                Grid.Row="1"
                NavigationUIVisibility="Hidden"/>
@@ -44,12 +46,12 @@
                 Margin="10,0,0,0" 
                 Click="ButtonExit_Click"/>
         <Button x:Name="ButtonTheme" 
-        Content="Сменить тему" 
-        Grid.Row="0"
-        HorizontalAlignment="Right" 
-        VerticalAlignment="Center"
-        Margin="0,0,10,0"
-        Width="120"
-        Click="ButtonTheme_Click"/>
+                Content="Сменить тему" 
+                Grid.Row="0"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center"
+                Margin="0,0,10,0"
+                Width="120"
+                Click="ButtonTheme_Click"/>
     </Grid>
 </Window>

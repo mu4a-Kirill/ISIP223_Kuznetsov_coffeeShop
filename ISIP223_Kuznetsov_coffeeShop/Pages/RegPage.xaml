@@ -36,12 +36,6 @@
                     <Label x:Name="LblFioHint" Content="Иванов Иван Иванович" Foreground="Gray" Margin="5,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"/>
                 </Grid>
 
-                <Label Content="Роль" Margin="0,10,0,0"/>
-                <ComboBox x:Name="CmbRole" ToolTip="Выберите роль" Height="30" VerticalContentAlignment="Center" Margin="0,0,0,10">
-                    <ComboBoxItem Content="Пользователь" Tag="2" IsSelected="True"/>
-                    <ComboBoxItem Content="Администратор" Tag="1"/>
-                </ComboBox>
-
                 <Button x:Name="BtnRegister" Content="Зарегистрироваться" Click="BtnRegister_Click" Margin="0,10,0,10" Width="200" HorizontalAlignment="Center"/>
                 <Button x:Name="BtnBackToAuth" Content="Назад" Click="BtnBackToAuth_Click" Width="200" HorizontalAlignment="Center"/>
             </StackPanel>
