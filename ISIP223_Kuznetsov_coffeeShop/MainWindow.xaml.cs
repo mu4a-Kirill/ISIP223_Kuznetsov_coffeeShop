@@ -20,34 +20,36 @@ namespace ISIP223_Kuznetsov_coffeeShop
     public partial class MainWindow : Window
     {
         private bool isDarkTheme = false;
+
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigated += (s, e) =>
-            {
-                if (MainFrame.Content is Page currentPage)
-                {
-                    this.Title = "Управление сетью кофеен - " + currentPage.Title;
-                }
-            };
+
+            MainFrame.Navigated += MainFrame_Navigated;
         }
 
-
-        public static string GetHash(string password)
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            using (var hash = SHA1.Create())
+            if (MainFrame.CanGoBack)
             {
-                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(password)).Select(x => x.ToString("X2")));
+                ButtonBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ButtonBack.Visibility = Visibility.Hidden;
             }
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new AuthPage());
+
             if (Properties.Settings.Default.IsDarkTheme)
             {
-                ChangeTheme("DarkTheme.xaml");
                 isDarkTheme = true;
+                ChangeTheme("DarkTheme.xaml");
             }
+
             var timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.IsEnabled = true;
@@ -55,10 +57,17 @@ namespace ISIP223_Kuznetsov_coffeeShop
             timer.Start();
         }
 
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
+        }
+
         private void ButtonTheme_Click(object sender, RoutedEventArgs e)
         {
             isDarkTheme = !isDarkTheme;
-
             string themeUri = isDarkTheme ? "DarkTheme.xaml" : "LightTheme.xaml";
 
             ChangeTheme(themeUri);
@@ -66,6 +75,7 @@ namespace ISIP223_Kuznetsov_coffeeShop
             Properties.Settings.Default.IsDarkTheme = isDarkTheme;
             Properties.Settings.Default.Save();
         }
+
         private void ChangeTheme(string themeUri)
         {
             var uri = new Uri(themeUri, UriKind.Relative);
@@ -81,21 +91,15 @@ namespace ISIP223_Kuznetsov_coffeeShop
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-         var result = MessageBox.Show("Вы действительно хотите выйти из приложения?","Подтверждение выхода", MessageBoxButton.YesNo,MessageBoxImage.Question);
+            var result = MessageBox.Show("Вы действительно хотите выйти из приложения?",
+                                         "Подтверждение выхода",
+                                         MessageBoxButton.YesNo,
+                                         MessageBoxImage.Question);
+
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;
             }
         }
-        private void ButtonBack_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainFrame.CanGoBack)
-            {
-                MainFrame.GoBack();
-            }
-        }
-
-
-
     }
 }
